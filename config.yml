@@ -1,0 +1,19 @@
+logging:
+  level: INFO
+  loggers:
+    com.netiq.dropwizard: DEBUG
+  appenders:
+    - type: console
+      threshold: ALL
+      logFormat: "%-5p [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%c] %m%n"
+
+    - type: file
+      threshold: ALL
+      logFormat: "%-5p [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%c] %m%n"
+      currentLogFilename: dw-logtest.log
+      archivedLogFilenamePattern: dw-logtest-%i.log.gz
+      archivedFileCount: 7
+      timeZone: UTC
+      maxFileSize: 2KB
+
+path: .
